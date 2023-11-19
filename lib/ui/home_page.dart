@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:smsapp/_core/http_util.dart';
 import 'package:smsapp/data/sms_handler.dart';
 import 'package:telephony/telephony.dart';
+
+import '../_core/http_util.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -38,18 +39,15 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Center(child: Text("SMS APP")),
           Text("url"),
           TextFormField(),
-          Text("url"),
+          Text("apiKey"),
           TextFormField(),
           ElevatedButton(onPressed: () async {
             await initPlatformState();
-            url = "http://localhost:8080";
-            apiKey = "123456";
 
-            //await secureStorage.write(key: "url", value: "http://localhost:8080");
-            //await secureStorage.write(key: "apiKey", value: "123456");
+            await secureStorage.write(key: "url", value: "http://localhost:8080");
+            await secureStorage.write(key: "apiKey", value: "123456");
           }, child: Text("Sms수신 시작"),),
         ],
       ),
