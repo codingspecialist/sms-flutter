@@ -1,4 +1,3 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:smsapp/data/sms_repository.dart';
 import 'package:telephony/telephony.dart';
 
